@@ -1,153 +1,19 @@
 {
-    "delta": {
-        "Alappuzha": {
-            "active": 13,
-            "confirmed": 13,
-            "deceased": 0,
-            "home_obs": 583,
-            "hospital_obs": -1,
-            "hospital_today": 1,
-            "recovered": 0,
-            "total_obs": 582
-        },
-        "Ernakulam": {
-            "active": 2,
-            "confirmed": 5,
-            "deceased": 0,
-            "home_obs": 922,
-            "hospital_obs": 1,
-            "hospital_today": -1,
-            "recovered": 3,
-            "total_obs": 923
-        },
-        "Idukki": {
-            "active": -3,
-            "confirmed": 1,
-            "deceased": 0,
-            "home_obs": 343,
-            "hospital_obs": -2,
-            "hospital_today": -6,
-            "recovered": 4,
-            "total_obs": 341
-        },
-        "Kannur": {
-            "active": 1,
-            "confirmed": 3,
-            "deceased": 1,
-            "home_obs": 1057,
-            "hospital_obs": 6,
-            "hospital_today": 9,
-            "recovered": 1,
-            "total_obs": 1063
-        },
-        "Kasaragod": {
-            "active": 2,
-            "confirmed": 4,
-            "deceased": 0,
-            "home_obs": 228,
-            "hospital_obs": 7,
-            "hospital_today": 8,
-            "recovered": 2,
-            "total_obs": 235
-        },
-        "Kollam": {
-            "active": -3,
-            "confirmed": 4,
-            "deceased": 0,
-            "home_obs": 636,
-            "hospital_obs": -7,
-            "hospital_today": 3,
-            "recovered": 7,
-            "total_obs": 629
-        },
-        "Kottayam": {
-            "active": 2,
-            "confirmed": 3,
-            "deceased": 0,
-            "home_obs": 428,
-            "hospital_obs": 6,
-            "hospital_today": 6,
-            "recovered": 1,
-            "total_obs": 434
-        },
-        "Kozhikode": {
-            "active": 2,
-            "confirmed": 4,
-            "deceased": 0,
-            "home_obs": 696,
-            "hospital_obs": 11,
-            "hospital_today": -14,
-            "recovered": 2,
-            "total_obs": 707
-        },
-        "Malappuram": {
-            "active": 14,
-            "confirmed": 14,
-            "deceased": 0,
-            "home_obs": 674,
-            "hospital_obs": 21,
-            "hospital_today": -1,
-            "recovered": 0,
-            "total_obs": 695
-        },
-        "Palakkad": {
-            "active": -1,
-            "confirmed": 5,
-            "deceased": 0,
-            "home_obs": 669,
-            "hospital_obs": 7,
-            "hospital_today": 8,
-            "recovered": 6,
-            "total_obs": 676
-        },
-        "Pathanamthitta": {
-            "active": 7,
-            "confirmed": 7,
-            "deceased": 0,
-            "home_obs": 421,
-            "hospital_obs": 3,
-            "hospital_today": -7,
-            "recovered": 0,
-            "total_obs": 424
-        },
-        "Thiruvananthapuram": {
-            "active": -1,
-            "confirmed": 1,
-            "deceased": 0,
-            "home_obs": 763,
-            "hospital_obs": -15,
-            "hospital_today": -15,
-            "recovered": 2,
-            "total_obs": 748
-        },
-        "Thrissur": {
-            "active": 10,
-            "confirmed": 14,
-            "deceased": 0,
-            "home_obs": 748,
-            "hospital_obs": 21,
-            "hospital_today": 15,
-            "recovered": 4,
-            "total_obs": 769
-        },
-        "Wayanad": {
-            "active": 0,
-            "confirmed": 0,
-            "deceased": 0,
-            "home_obs": 222,
-            "hospital_obs": 5,
-            "hospital_today": 5,
-            "recovered": 0,
-            "total_obs": 227
-        }
-    },
-    "geo_json_id": "DISTRICT",
-    "last_updated": "12-06-2020 7:36 PM",
-    "summary": {
+    "data": {
         "Alappuzha": {
             "active": 95,
             "confirmed": 120,
             "deceased": 1,
+            "delta": {
+                "active": 13,
+                "confirmed": 13,
+                "deceased": 0,
+                "home_obs": 583,
+                "hospital_obs": -1,
+                "hospital_today": 1,
+                "recovered": 0,
+                "total_obs": 582
+            },
             "home_obs": 12015,
             "hospital_obs": 98,
             "hospital_today": 9,
@@ -160,6 +26,16 @@
             "active": 45,
             "confirmed": 91,
             "deceased": 1,
+            "delta": {
+                "active": 2,
+                "confirmed": 5,
+                "deceased": 0,
+                "home_obs": 922,
+                "hospital_obs": 1,
+                "hospital_today": -1,
+                "recovered": 3,
+                "total_obs": 923
+            },
             "home_obs": 24114,
             "hospital_obs": 114,
             "hospital_today": 15,
@@ -172,6 +48,16 @@
             "active": 24,
             "confirmed": 55,
             "deceased": 0,
+            "delta": {
+                "active": -3,
+                "confirmed": 1,
+                "deceased": 0,
+                "home_obs": 343,
+                "hospital_obs": -2,
+                "hospital_today": -6,
+                "recovered": 4,
+                "total_obs": 341
+            },
             "home_obs": 8818,
             "hospital_obs": 30,
             "hospital_today": 2,
@@ -184,6 +70,16 @@
             "active": 115,
             "confirmed": 287,
             "deceased": 3,
+            "delta": {
+                "active": 1,
+                "confirmed": 3,
+                "deceased": 1,
+                "home_obs": 1057,
+                "hospital_obs": 6,
+                "hospital_today": 9,
+                "recovered": 1,
+                "total_obs": 1063
+            },
             "home_obs": 22601,
             "hospital_obs": 190,
             "hospital_today": 29,
@@ -196,6 +92,16 @@
             "active": 108,
             "confirmed": 352,
             "deceased": 0,
+            "delta": {
+                "active": 2,
+                "confirmed": 4,
+                "deceased": 0,
+                "home_obs": 228,
+                "hospital_obs": 7,
+                "hospital_today": 8,
+                "recovered": 2,
+                "total_obs": 235
+            },
             "home_obs": 9278,
             "hospital_obs": 103,
             "hospital_today": 10,
@@ -208,6 +114,16 @@
             "active": 97,
             "confirmed": 144,
             "deceased": 1,
+            "delta": {
+                "active": -3,
+                "confirmed": 4,
+                "deceased": 0,
+                "home_obs": 636,
+                "hospital_obs": -7,
+                "hospital_today": 3,
+                "recovered": 7,
+                "total_obs": 629
+            },
             "home_obs": 14660,
             "hospital_obs": 110,
             "hospital_today": 15,
@@ -220,6 +136,16 @@
             "active": 45,
             "confirmed": 88,
             "deceased": 0,
+            "delta": {
+                "active": 2,
+                "confirmed": 3,
+                "deceased": 0,
+                "home_obs": 428,
+                "hospital_obs": 6,
+                "hospital_today": 6,
+                "recovered": 1,
+                "total_obs": 434
+            },
             "home_obs": 13690,
             "hospital_obs": 47,
             "hospital_today": 7,
@@ -232,6 +158,16 @@
             "active": 74,
             "confirmed": 137,
             "deceased": 1,
+            "delta": {
+                "active": 2,
+                "confirmed": 4,
+                "deceased": 0,
+                "home_obs": 696,
+                "hospital_obs": 11,
+                "hospital_today": -14,
+                "recovered": 2,
+                "total_obs": 707
+            },
             "home_obs": 19725,
             "hospital_obs": 191,
             "hospital_today": 32,
@@ -244,6 +180,16 @@
             "active": 190,
             "confirmed": 256,
             "deceased": 3,
+            "delta": {
+                "active": 14,
+                "confirmed": 14,
+                "deceased": 0,
+                "home_obs": 674,
+                "hospital_obs": 21,
+                "hospital_today": -1,
+                "recovered": 0,
+                "total_obs": 695
+            },
             "home_obs": 20560,
             "hospital_obs": 387,
             "hospital_today": 41,
@@ -256,6 +202,16 @@
             "active": 182,
             "confirmed": 270,
             "deceased": 1,
+            "delta": {
+                "active": -1,
+                "confirmed": 5,
+                "deceased": 0,
+                "home_obs": 669,
+                "hospital_obs": 7,
+                "hospital_today": 8,
+                "recovered": 6,
+                "total_obs": 676
+            },
             "home_obs": 20961,
             "hospital_obs": 218,
             "hospital_today": 19,
@@ -268,6 +224,16 @@
             "active": 91,
             "confirmed": 127,
             "deceased": 1,
+            "delta": {
+                "active": 7,
+                "confirmed": 7,
+                "deceased": 0,
+                "home_obs": 421,
+                "hospital_obs": 3,
+                "hospital_today": -7,
+                "recovered": 0,
+                "total_obs": 424
+            },
             "home_obs": 11516,
             "hospital_obs": 88,
             "hospital_today": 7,
@@ -280,6 +246,16 @@
             "active": 56,
             "confirmed": 123,
             "deceased": 3,
+            "delta": {
+                "active": -1,
+                "confirmed": 1,
+                "deceased": 0,
+                "home_obs": 763,
+                "hospital_obs": -15,
+                "hospital_today": -15,
+                "recovered": 2,
+                "total_obs": 748
+            },
             "home_obs": 19376,
             "hospital_obs": 187,
             "hospital_today": 17,
@@ -292,6 +268,16 @@
             "active": 161,
             "confirmed": 218,
             "deceased": 3,
+            "delta": {
+                "active": 10,
+                "confirmed": 14,
+                "deceased": 0,
+                "home_obs": 748,
+                "hospital_obs": 21,
+                "hospital_today": 15,
+                "recovered": 4,
+                "total_obs": 769
+            },
             "home_obs": 21253,
             "hospital_obs": 190,
             "hospital_today": 34,
@@ -304,6 +290,16 @@
             "active": 21,
             "confirmed": 54,
             "deceased": 1,
+            "delta": {
+                "active": 0,
+                "confirmed": 0,
+                "deceased": 0,
+                "home_obs": 222,
+                "hospital_obs": 5,
+                "hospital_today": 5,
+                "recovered": 0,
+                "total_obs": 227
+            },
             "home_obs": 6850,
             "hospital_obs": 32,
             "hospital_today": 5,
@@ -312,5 +308,7 @@
             "recovered": 32,
             "total_obs": 6882
         }
-    }
+    },
+    "geo_json_id": "DISTRICT",
+    "last_updated": "12-06-2020 7:36 PM"
 }
