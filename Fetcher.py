@@ -17,7 +17,7 @@ def fetch_kerala_data():
     with open("KeralaCoordinates.json", "r+") as file:
         kerala_cordinates = json.load(file)
 
-    #read disctrict wise geo/json cordinates from KeralaCoordinates.json
+    #read disctrict wise geo/json cordinates from Kerala_District.geojson
     geojson_data = ""
     with open("Kerala_District.geojson", "r+") as file:
         geojson_data = json.load(file)
@@ -68,7 +68,7 @@ def fetch_country_wise_data():
     df.sort_values(['Country_Region', 'Province_State'], inplace=True)
     df['Province_State'] = df['Province_State'].map(lambda name: "" if(name == "") else  ", " + name)
     df['Country, State'] = df['Country_Region'] + df['Province_State']
-    df.drop(['Province_State', 'Country_Region'], axis=1, inplace=True)
+    # df.drop(['Province_State', 'Country_Region'], axis=1, inplace=True)
     #uncomment the below line if you wish to see the entire universe
     # pd.set_option("display.max_rows", None, "display.max_columns", None)
 
@@ -80,7 +80,9 @@ def fetch_country_wise_data():
     lat_long_col = lat_long_grp.mean()
     rest_all_col = rest_grp.sum()    
     result = pd.concat([lat_long_col, rest_all_col], axis=1, sort=False)
-    
+    result.reset_index(inplace=True)
+    result['Country'] = result['Country, State'].map(lambda name: name.split(', ')[0])
+     
     # dump all this shit into a json and a csv file and call it a day
     print(" ==> Entire World Covid Data : ")
     print(result)    
@@ -89,10 +91,11 @@ def fetch_country_wise_data():
 
 
     #TODO: conversion to json not implemented correctly yet
-    # world_covid_data = ""
-    # with open("World_Covid_Data.json", "r+") as file:
-    #     world_covid_data = json.load(file)
-    #     json.dump(world_covid_data, file, sort_keys=True)
+    world_covid_data = ""
+    with open("World_Covid_Data.json", "r+") as file:
+        world_covid_data = json.load(file)
+        world_covid_data.update({'geo_json_id': 'name'})
+        json.dump(world_covid_data, file, sort_keys=True)
 
     print("\n===> World covid data succefully fetched!!!")
 
