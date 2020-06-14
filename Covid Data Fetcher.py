@@ -56,10 +56,23 @@ def fetch_kerala_data():
     print("\n===> Kerala data succefully fetched!!!")
 
 
+def get_link_to_world_covid_data(trial = 0):
+    project_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/'
+    today = (datetime.date.today() - datetime.timedelta(days=trial)).strftime("%m-%d-%Y")
+    csv_url = project_url + str(today) + ".csv"
+    # print(csv_url)
+    try:
+        pd.read_csv(csv_url)     
+
+    except:
+        csv_url = get_link_to_world_covid_data(trial+1)
+    return csv_url
+
+
 def fetch_country_wise_data():
     print("\n ==> fetch_country_wise_data() is called")
-    csv_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/06-12-2020.csv'
-    df = pd.read_csv(csv_url)
+    url = get_link_to_world_covid_data()
+    df = pd.read_csv(url)       
 
     # clean the dataset (Removing FIPS, Admin2, Last_Update, Combined_Key, Province_State, Country_Region)
     # and adding 'State, Country' as a combined column
@@ -104,7 +117,7 @@ def fetch_country_wise_data():
 def separate_india_data():
     print("\n ==> separate_india_data() is called")
 
-    world_covid_data = pd.read_csv("World_Covid_Data.csv")
+    world_covid_data = pd.read_csv("covid_data_csv/world_covid_data.csv")
     india_data = world_covid_data[world_covid_data["Country"] == "India"]
     india_data['State'] = india_data['Country, State'].map(lambda x: x.split(',')[1].strip())
     india_data.drop(['Country', 'Country, State'], axis=1, inplace=True)
@@ -126,7 +139,7 @@ def separate_india_data():
 def separate_usa_data():
     print("\n ==> separate_usa_data() is called")
 
-    world_covid_data = pd.read_csv("World_Covid_Data.csv")
+    world_covid_data = pd.read_csv("covid_data_csv/world_covid_data.csv")
     us_data = world_covid_data[world_covid_data["Country"] == "US"]
     us_data['State'] = us_data['Country, State'].map(lambda x: x.split(',')[1].strip())
     us_data.drop(['Country', 'Country, State'], axis=1, inplace=True)
@@ -147,7 +160,7 @@ def separate_usa_data():
 
 def separate_others_data():
     print("\n===> separate_others_data() was called")
-    world_covid_data = pd.read_csv("World_Covid_Data.csv")
+    world_covid_data = pd.read_csv("covid_data_csv/world_covid_data.csv")
     world_covid_data['Country'] = world_covid_data['Country, State'].map(lambda x: x.split(',')[0].strip())
     lat_long_grp = world_covid_data[['Lat', 'Long_', 'Incidence_Rate', 'Case-Fatality_Ratio']].groupby(world_covid_data['Country'])
     rest_grp = world_covid_data[['Confirmed', 'Deaths', 'Recovered', 'Active']].groupby(world_covid_data['Country'])
@@ -176,13 +189,16 @@ def add_geo_json_feature(covid_df, geo_json_data, feature_id, json_output_name):
     # to set regions that have no geo.json feature to null 
     covid_df['geo_json_feature'] = covid_df['geo_json_feature'].map(lambda x: x if 'properties' in x else "null")
     
+    covid_json = covid_df.reset_index().to_json(orient='records') 
+    covid_json = json.loads(covid_json)
+
     # comment this line if you wish to see all the end product json files
-    # print(covid_df)
+    # print(json.dumps(covid_json, indent=4))
 
     # dump all data in csv and json then run for your life 
     covid_df.to_csv('covid_data_csv/' + json_output_name + '.csv', index = False)
     with open("covid_data_json/" + json_output_name + ".json", "w+") as file:
-        json.dump(covid_df.to_json(), file, sort_keys=True)
+        json.dump(covid_json, file, sort_keys=True)
 
     print("\n===> add_geo_json_feature was succefully!!!")
 
